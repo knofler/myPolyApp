@@ -1,0 +1,174 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="my-element">
+
+  <template>
+    <style>    
+      :host {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        top: 0px;
+        left: 0px;
+      }
+      #core_drawer_panel {
+        position: absolute;
+        top: 300px;
+        right: 0px;
+        bottom: 0px;
+        left: 620px;
+      }
+      #section {
+        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
+        background-color: rgb(250, 250, 250);
+      }
+      #section1 {
+        height: 100%;
+        box-sizing: border-box;
+        background-color: rgb(221, 221, 221);
+      }
+      #core_menu_button {
+        left: 1130px;
+        top: 410px;
+      }
+      #core_item {
+        left: 1040px;
+        top: 400px;
+      }
+      #core_scroll_header_panel {
+        width: 380px;
+        height: 460px;
+        left: -6px;
+        top: -10px;
+        position: absolute;
+      }
+      #core_toolbar {
+        color: rgb(241, 241, 241);
+        fill: rgb(241, 241, 241);
+        background-color: rgb(66, 133, 244);
+      }
+      #section2 {
+        height: 5000px;
+        background: linear-gradient(rgb(214, 227, 231), rgb(173, 216, 230));
+      }
+      #core_icon_button3 {
+        left: 18px;
+        top: 60px;
+        position: absolute;
+      }
+      #core_menu {
+        font-size: 16px;
+        left: 12px;
+        top: 2px;
+        position: absolute;
+      }
+      #input {
+        padding: 15px;
+        left: 30px;
+        top: 28px;
+        position: absolute;
+      }
+      #core_icon_button4 {
+        left: 1110px;
+        top: 400px;
+      }
+      #core_tooltip {
+        left: 90px;
+        top: 38px;
+        position: absolute;
+      }
+      #google_map {
+        width: 400px;
+        height: 400px;
+        display: block;
+        left: 990px;
+        top: 380px;
+      }
+      #google_map_directions {
+        left: -250px;
+        top: -182px;
+        position: absolute;
+      }
+      #notification_alert {
+        left: 120px;
+        top: 98px;
+        position: absolute;
+      }
+      #speech_mic {
+        left: 180px;
+        top: 148px;
+        position: absolute;
+      }
+      #paper_button {
+        left: -250px;
+        top: -182px;
+        position: absolute;
+      }
+      #paper_checkbox {
+        left: 140px;
+        top: 88px;
+        position: absolute;
+      }
+      #paper_progress {
+        left: 120px;
+        top: 128px;
+        position: absolute;
+      }
+      #paper_toggle_button {
+        left: 120px;
+        top: 98px;
+        position: absolute;
+      }
+    </style>
+    <core-drawer-panel transition id="core_drawer_panel" touch-action>
+      <section id="section" drawer>
+        <core-menu selected="1" selectedindex="1" id="core_menu">
+          <core-submenu id="core_submenu" icon="settings" label="Topics">
+            <core-item id="core_item" label="Topic 1" horizontal center layout></core-item>
+            <core-item id="core_item1" label="Topic 2" horizontal center layout></core-item>
+          </core-submenu>
+          <core-submenu active id="core_submenu1" icon="settings" label="Favorites">
+            <core-item id="core_item2" label="Favorite 1" horizontal center layout></core-item>
+            <core-item id="core_item3" label="Favorite 2" horizontal center layout></core-item>
+            <core-item id="core_item4" label="Favorite 3" horizontal center layout></core-item>
+          </core-submenu>
+        </core-menu>
+      </section>
+      <section id="section1" main>
+        <core-scroll-header-panel headermargin="128" condenses headerheight="192" id="core_scroll_header_panel">
+          <core-toolbar id="core_toolbar" class="tall">
+            <core-icon-button icon="arrow-back" id="core_icon_button"></core-icon-button>
+            <div id="div" flex></div>
+            <core-icon-button icon="search" id="core_icon_button1"></core-icon-button>
+            <core-icon-button icon="more-vert" id="core_icon_button2"></core-icon-button>
+            <div id="div1" class="bottom indent">Title</div>
+            <core-icon-button icon="menu" id="core_icon_button3" theme="core-light-theme"></core-icon-button>
+          </core-toolbar>
+          <section id="section2" content>
+            <input id="input" placeholder="type something..." is="core-input">
+            <core-tooltip label="I'm a tooltip" id="core_tooltip">
+              <span id="span">Hover over me.</span>
+            </core-tooltip>
+            <google-map-directions id="google_map_directions"></google-map-directions>
+            <notification-alert message="Hi there!" icon="icon.png" name="notification" id="notification_alert"></notification-alert>
+            <speech-mic id="speech_mic"></speech-mic>
+            <paper-button id="paper_button">button</paper-button>
+            <paper-checkbox label="click me" id="paper_checkbox"></paper-checkbox>
+            <paper-progress id="paper_progress"></paper-progress>
+            <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+          </section>
+        </core-scroll-header-panel>
+      </section>
+    </core-drawer-panel>
+  </template>
+
+  <script>
+
+    Polymer({
+      
+    });
+
+  </script>
+
+</polymer-element>
