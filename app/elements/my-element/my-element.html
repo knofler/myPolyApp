@@ -1,7 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <polymer-element name="my-element">
-
   <template>
     <style>    
       :host {
@@ -11,6 +10,17 @@
         box-sizing: border-box;
         top: 0px;
         left: 0px;
+      }
+      .todo{
+        padding: 20px 10px;
+        position: relative;
+        border: 1px solid #444;
+        background-color: rgb(216,216,216) ;
+        width: 100%;
+      }
+      .todoTask{
+        padding: 10px;
+        font-size: 20px;
       }
       #core_drawer_panel {
         position: absolute;
@@ -38,7 +48,7 @@
       }
       #core_scroll_header_panel {
         width: 100%;
-        height: 460px;
+        height: 700px;
         left: -6px;
         top: -10px;
         position: absolute;
@@ -116,18 +126,22 @@
         position: absolute;
       }
       #paper_toggle_button {
-        left: 120px;
-        top: 98px;
-        position: absolute;
+        /*left: 120px;
+        top: 98px;*/
+        position: relative;
+        padding: 20px;
+        border: 2px solid red;
       }
-    </style>
+     </style>
     <core-drawer-panel transition id="core_drawer_panel" touch-action>
       <section id="section" drawer>
         <core-menu selected="1" selectedindex="1" id="core_menu">
+          
           <core-submenu id="core_submenu" icon="settings" label="Topics">
             <core-item id="core_item1" label="Topic 1" horizontal center layout></core-item>
             <core-item id="core_item2" label="Topic 2" horizontal center layout></core-item>
           </core-submenu>
+
           <core-submenu active id="core_submenu1" icon="settings" label="Favorites">
             <core-item id="core_item3" label="Favorite 1" horizontal center layout></core-item>
             <core-item id="core_item4" label="Favorite 2" horizontal center layout></core-item>
@@ -135,18 +149,82 @@
           </core-submenu>
         </core-menu>
       </section>
+
       <section id="section1" main>
-        <core-scroll-header-panel condenses headerheight="192" id="core_scroll_header_panel">
+        <core-scroll-header-panel condenses flex id="core_scroll_header_panel">
+         
           <core-toolbar id="core_toolbar" class="tall">
             <core-icon-button icon="arrow-back" id="core_icon_button"></core-icon-button>
             <div id="div" flex></div>
             <core-icon-button icon="search" id="core_icon_button1"></core-icon-button>
             <core-icon-button icon="more-vert" id="core_icon_button2"></core-icon-button>
-            <div id="div1" class="bottom indent">Title</div>
+            <div id="div1" class="bottom indent">Things #toDo</div>
             <core-icon-button icon="menu" id="core_icon_button3" theme="core-light-theme"></core-icon-button>
           </core-toolbar>
 
-            <input id="input" placeholder="type something..." is="core-input">
+           <div class="indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span class="todoTask">Number One things too do</span>
+           </div>
+         <div class="bottom indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+           </div>
+              <div class="bottom indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+           </div>
+              <div class="bottom indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+           </div>
+              <div class="bottom indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+           </div>
+
+           <div class="indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span class="todoTask">Number One things too do</span>
+           </div>
+         <div class="bottom indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+           </div>
+              <div class="bottom indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+           </div>
+              <div class="bottom indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+           </div>
+              <div class="bottom indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+           </div>
+
+   <!--         <input id="input" placeholder="type something..." is="core-input">
             <core-tooltip label="I'm a tooltip" id="core_tooltip">
               <span id="span">Hover over me.</span>
             </core-tooltip>
@@ -156,18 +234,13 @@
             <paper-button id="paper_button">button</paper-button>
             <paper-checkbox label="click me" id="paper_checkbox"></paper-checkbox>
             <paper-progress id="paper_progress"></paper-progress>
-            <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+            <paper-toggle-button id="paper_toggle_button"></paper-toggle-button> -->
         </core-scroll-header-panel>
       </section>
-
-  </template>
-
+   </template>
   <script>
-
     Polymer({
       
     });
-
-  </script>
-
-</polymer-element>
+   </script>
+ </polymer-element>
