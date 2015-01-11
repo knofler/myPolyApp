@@ -14,7 +14,7 @@
       .todo{
         padding: 20px 10px;
         position: relative;
-        border: 1px solid #444;
+        border: 1px solid #ccc;
         background-color: rgb(216,216,216) ;
         width: 100%;
       }
@@ -129,8 +129,8 @@
         /*left: 120px;
         top: 98px;*/
         position: relative;
-        padding: 20px;
-        border: 2px solid red;
+        /*padding: 20px;*/
+        /*border: 2px solid red;*/
       }
      </style>
     <core-drawer-panel transition id="core_drawer_panel" touch-action>
@@ -154,12 +154,13 @@
         <core-scroll-header-panel condenses flex id="core_scroll_header_panel">
          
           <core-toolbar id="core_toolbar" class="tall">
-            <core-icon-button icon="arrow-back" id="core_icon_button"></core-icon-button>
+            <!-- <core-icon-button icon="arrow-back" onClick="showDrawer" id="core_icon_button"></core-icon-button> -->
+            <core-icon-button icon="menu" id="core_icon_button" on-tap="{{showDrawer}}" theme="core-light-theme"></core-icon-button>
             <div id="div" flex></div>
             <core-icon-button icon="search" id="core_icon_button1"></core-icon-button>
             <core-icon-button icon="more-vert" id="core_icon_button2"></core-icon-button>
             <div id="div1" class="bottom indent">Things #toDo</div>
-            <core-icon-button icon="menu" id="core_icon_button3" theme="core-light-theme"></core-icon-button>
+            <!-- <core-icon-button icon="menu" id="core_icon_button3" theme="core-light-theme"></core-icon-button> -->
           </core-toolbar>
 
            <div class="indent todo">          
@@ -168,62 +169,48 @@
               </span>
               <span class="todoTask">Number One things too do</span>
            </div>
-         <div class="bottom indent todo">          
+         <div class="indent todo">          
               <span>
                 <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
               </span>
-              <span>Number One things too do</span>
+              <span class="todoTask">Number One things too do</span>
            </div>
-              <div class="bottom indent todo">          
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-           </div>
-              <div class="bottom indent todo">          
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-           </div>
-              <div class="bottom indent todo">          
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-           </div>
-
            <div class="indent todo">          
               <span>
                 <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
               </span>
               <span class="todoTask">Number One things too do</span>
            </div>
-         <div class="bottom indent todo">          
+           <div class="indent todo">          
               <span>
                 <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
               </span>
-              <span>Number One things too do</span>
+              <span class="todoTask">Number One things too do</span>
            </div>
-              <div class="bottom indent todo">          
+           <div class="indent todo">          
               <span>
                 <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
               </span>
-              <span>Number One things too do</span>
+              <span class="todoTask">Number One things too do</span>
            </div>
-              <div class="bottom indent todo">          
+           <div class="indent todo">          
               <span>
                 <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
               </span>
-              <span>Number One things too do</span>
+              <span class="todoTask">Number One things too do</span>
            </div>
-              <div class="bottom indent todo">          
+           <div class="indent todo">          
               <span>
                 <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
               </span>
-              <span>Number One things too do</span>
+              <span class="todoTask">Number One things too do</span>
            </div>
-
+           <div class="indent todo">          
+              <span>
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span class="todoTask">Number One things too do</span>
+           </div>
    <!--         <input id="input" placeholder="type something..." is="core-input">
             <core-tooltip label="I'm a tooltip" id="core_tooltip">
               <span id="span">Hover over me.</span>
@@ -239,8 +226,10 @@
       </section>
    </template>
   <script>
-    Polymer({
-      
+    Polymer('my-element',{
+      showDrawer: function(){
+          alert("hello");
+      }
     });
    </script>
  </polymer-element>
