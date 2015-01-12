@@ -16,9 +16,9 @@
         position: relative;
         /*border: 1px dotted #3D444B;*/
         background-color: rgb(250, 250, 250); ;
-        width: 100%;
         height: auto;
-        margin-bottom: 50px;
+        margin-bottom: 150px;
+        margin-left: 20px;
       }
       .todoTask{
         padding: 20px 10px;
@@ -32,6 +32,8 @@
        border-radius: 9px/40px;
        margin-bottom: 12px;
        margin-top: 8px;
+       max-height: 200px;
+       padding: 10px;
       }
       #core_drawer_panel {
         position: absolute;
@@ -159,6 +161,9 @@
       .taskTitle{
         margin-left: 15px;
       }
+      .toggleComplete{
+        margin-left: 15px;
+      }
      </style>
     <core-drawer-panel transition id="core_drawer_panel" touch-action>
       <section id="section" drawer>
@@ -192,205 +197,187 @@
 
            <div class="bottom indent todo fullbleed">     
              <div class="todoTask">    
-              <span>
+              <span class="toggleComplete">
                 <paper-toggle-button id="paper_toggle_button" horizontal></paper-toggle-button>
               </span>
               <span class="taskTitle"><strong>Fix car</strong></span>
               <span class="taskDetails"  horizontal start-justified layout>Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do</span>
               </div>
                <div class="todoTask">    
-              <span>
+              <span class="toggleComplete">
                 <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
               </span>
               <span>Number One things too do</span>
               </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-                  <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-            <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-                  <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-               <div class="todoTask">    
-              <span>
-                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-              </span>
-              <span>Number One things too do</span>
-              </div>
-                  <div class="todoTask">    
-              <span>
+              <div class="todoTask">    
+              <span class="toggleComplete">
                 <paper-toggle-button id="paper_toggle_button" horizontal></paper-toggle-button>
               </span>
               <span class="taskTitle"><strong>Fix car</strong></span>
               <span class="taskDetails"  horizontal start-justified layout>Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do</span>
               </div>
+             <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+               <div class="todoTask">    
+               <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+                    <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button" horizontal></paper-toggle-button>
+              </span>
+              <span class="taskTitle"><strong>Fix car</strong></span>
+              <span class="taskDetails"  horizontal start-justified layout>Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do</span>
+              </div>
+               <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button" horizontal></paper-toggle-button>
+              </span>
+              <span class="taskTitle"><strong>Fix car</strong></span>
+              <span class="taskDetails"  horizontal start-justified layout>Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do</span>
+              </div>
+             <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+               <div class="todoTask">    
+               <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+                     <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button" horizontal></paper-toggle-button>
+              </span>
+              <span class="taskTitle"><strong>Fix car</strong></span>
+              <span class="taskDetails"  horizontal start-justified layout>Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do</span>
+              </div>
+               <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button" horizontal></paper-toggle-button>
+              </span>
+              <span class="taskTitle"><strong>Fix car</strong></span>
+              <span class="taskDetails"  horizontal start-justified layout>Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do</span>
+              </div>
+             <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+               <div class="todoTask">    
+               <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+                     <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button" horizontal></paper-toggle-button>
+              </span>
+              <span class="taskTitle"><strong>Fix car</strong></span>
+              <span class="taskDetails"  horizontal start-justified layout>Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do</span>
+              </div>
+               <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button" horizontal></paper-toggle-button>
+              </span>
+              <span class="taskTitle"><strong>Fix car</strong></span>
+              <span class="taskDetails"  horizontal start-justified layout>Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do</span>
+              </div>
+             <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+              <div class="todoTask">    
+              <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+               <div class="todoTask">    
+               <span class="toggleComplete">
+                <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+              </span>
+              <span>Number One things too do</span>
+              </div>
+
+
+
+
+
+              
            </div>
         </core-header-panel>
       </section>
