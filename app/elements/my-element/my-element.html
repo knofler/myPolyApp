@@ -29,12 +29,11 @@
   /*      border-bottom-left-radius: 8px;
         border-top-left-radius: 5px;*/
         margin-left: 10px;
-        margin-right: 20px;
+        margin-right: 10px;
        border-radius: 9px/40px;
        margin-bottom: 12px;
        margin-top: 8px;
        max-height: 200px;
-       padding: 10px;
       }
       #core_drawer_panel {
         position: absolute;
@@ -49,6 +48,11 @@
       }
       #section1 {
         height: 100%;
+        box-sizing: border-box;
+        background-color: rgb(221, 221, 221);
+      }
+      #sectionInput {
+        height: 75px;
         box-sizing: border-box;
         background-color: rgb(221, 221, 221);
       }
@@ -75,6 +79,7 @@
       }
       #div1{
         padding-top: 25px;
+        margin-left: 400px;
       }
       #section2 {
         height: 5000px;
@@ -93,8 +98,8 @@
       }
       #input {
         padding: 15px;
-        left: 30px;
-        top: 28px;
+        left: 46px;
+        top: 15px;
         position: absolute;
       }
       #core_icon_button4 {
@@ -192,7 +197,10 @@
             <div id="div" flex></div>
             <core-icon-button icon="search" id="core_icon_button1"></core-icon-button>
             <core-icon-button icon="more-vert" id="core_icon_button2"></core-icon-button>
-            <div id="div1" class="bottom indent">Things #toDo</div>
+             <div id="div1" class="bottom indent">
+                  <input id="input" placeholder="Write task ..." is="core-input">
+            <!--  <span>Things #toDo</span> -->
+             </div>
             <!-- <core-icon-button icon="menu" id="core_icon_button3" theme="core-light-theme"></core-icon-button> -->
           </core-toolbar>
 
