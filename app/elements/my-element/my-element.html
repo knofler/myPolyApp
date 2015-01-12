@@ -111,28 +111,7 @@
         top: 38px;
         position: absolute;
       }
-      #google_map {
-        width: 400px;
-        height: 400px;
-        display: block;
-        left: 990px;
-        top: 380px;
-      }
-      #google_map_directions {
-        left: -250px;
-        top: -182px;
-        position: absolute;
-      }
-      #notification_alert {
-        left: 120px;
-        top: 98px;
-        position: absolute;
-      }
-      #speech_mic {
-        left: 180px;
-        top: 148px;
-        position: absolute;
-      }
+
       #paper_button {
         left: -250px;
         top: -182px;
@@ -141,11 +120,6 @@
       #paper_checkbox {
         left: 140px;
         top: 88px;
-        position: absolute;
-      }
-      #paper_progress {
-        left: 120px;
-        top: 128px;
         position: absolute;
       }
       #paper_toggle_button {
@@ -169,6 +143,9 @@
       }
       .toggleComplete{
         margin-left: 15px;
+      }
+      .menu{
+        color: #444;
       }
      </style>
     <core-drawer-panel transition id="core_drawer_panel" touch-action>
@@ -196,7 +173,19 @@
             <core-icon-button icon="menu" id="core_icon_button" on-tap="{{showDrawer}}" theme="core-light-theme"></core-icon-button>
             <div id="div" flex></div>
             <core-icon-button icon="search" id="core_icon_button1"></core-icon-button>
-            <core-icon-button icon="more-vert" id="core_icon_button2"></core-icon-button>
+            <!-- <core-icon-button icon="more-vert" id="core_icon_button2"> -->
+            <paper-menu-button>
+              <paper-icon-button icon="more-vert">
+              </paper-icon-button>
+              <paper-dropdown class="dropdown" halign="right">
+              <core-menu class="menu">
+              <paper-item>Settings</paper-item>
+              <paper-item>Help</paper-item>
+              <paper-item>Feedback</paper-item>
+              </core-menu>
+              </paper-dropdown>
+            </paper-menu-button>
+        
              <div id="div1" class="bottom indent">
                   <input id="input" placeholder="Write task ..." is="core-input">
             <!--  <span>Things #toDo</span> -->
