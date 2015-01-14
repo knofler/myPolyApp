@@ -149,8 +149,10 @@
         color: #444;
       }
       .cardHead{
-        border-bottom: 1px solid #cdcdcc;
+        /*border-bottom: 1px solid #cdcdcc;*/
         padding: 10px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
       }
       .cardFooter{
         padding: 10px;
@@ -171,6 +173,26 @@
       .arrowDown{
         float: right;
         margin-top:-21px; 
+      }
+      paper-progress{
+        height: 20px;
+        margin-top: 10px;
+        margin-left:5px;
+        /*margin-right:10px;*/
+        width:100%;
+        border: 1px solid #ccc;
+        overflow: hidden;
+      }
+      paper-progress::shadow #activeProgress {
+        background-color: #f05c4e;
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px
+      }
+    /*  paper-progress::shadow #secondaryProgress {
+        background-color: blue;
+      }*/
+      paper-progress::shadow #progressContainer {
+        background-color:#c8c8c8;
       }
 
      </style>
@@ -214,7 +236,6 @@
               </paper-menu-button>
         
              <div id="div1" class="bottom indent">
-             <form
                   <input id="input" placeholder="Write task ..." is="core-input">
              </div>
 
@@ -224,25 +245,383 @@
 
              <!-- ***************************Each card for task display******************** -->
                <div class="todoTask">   
-                 <div class="cardHead"> 
-                    <span class="toggleComplete">
-                      <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-                    </span>
-                    <span class="taskTitle"><strong>Fix car</strong></span>
-                    <span class="arrowDown">
-                      <paper-menu-button>
-                        <paper-icon-button icon="more-vert">
-                        </paper-icon-button>
-                        <paper-dropdown class="dropdown" halign="right">
-                          <core-menu class="menu">
-                            <paper-item>Settings</paper-item>
-                            <paper-item>Help</paper-item>
-                            <paper-item>Feedback</paper-item>
-                          </core-menu>
-                        </paper-dropdown>
-                      </paper-menu-button>
+                  <div class="cardHead"> 
+                      <span class="toggleComplete">
+                        <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
                       </span>
+                      <span class="taskTitle"><strong>Fix car</strong></span>
+                      <span class="arrowDown">
+                        <paper-menu-button>
+                          <paper-icon-button icon="more-vert">
+                          </paper-icon-button>
+                          <paper-dropdown class="dropdown" halign="right">
+                            <core-menu class="menu">
+                              <paper-item>Settings</paper-item>
+                              <paper-item>Help</paper-item>
+                              <paper-item>Feedback</paper-item>
+                            </core-menu>
+                          </paper-dropdown>
+                        </paper-menu-button>
+                        </span>
+                    </div>
+                  
+                  <div class="progress">
+                    <paper-progress value="60" secondaryProgesss="30"></paper-progress>
                   </div>
+
+                  <div class="cardBody">
+                    <span class="taskDetails" horizontal start-justified layout>
+                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
+                    </span>
+                  </div>
+                  <div class="cardComment">
+                     <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
+                        <input id="input1" is="core-input" pattern="^[0-9].*">
+                    </paper-input-decorator>
+                  </div>
+                  <div class="cardFooter">
+                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
+                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
+                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
+                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
+                  </div>
+                </div>
+              <!-- *************************** ## End of cards ## ******************** -->   
+           
+            <!-- ***************************Each card for task display******************** -->
+               <div class="todoTask">   
+                  <div class="cardHead"> 
+                      <span class="toggleComplete">
+                        <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+                      </span>
+                      <span class="taskTitle"><strong>Fix car</strong></span>
+                      <span class="arrowDown">
+                        <paper-menu-button>
+                          <paper-icon-button icon="more-vert">
+                          </paper-icon-button>
+                          <paper-dropdown class="dropdown" halign="right">
+                            <core-menu class="menu">
+                              <paper-item>Settings</paper-item>
+                              <paper-item>Help</paper-item>
+                              <paper-item>Feedback</paper-item>
+                            </core-menu>
+                          </paper-dropdown>
+                        </paper-menu-button>
+                        </span>
+                    </div>
+                  
+                  <div class="progress">
+                    <paper-progress value="60" secondaryProgesss="30"></paper-progress>
+                  </div>
+
+                  <div class="cardBody">
+                    <span class="taskDetails" horizontal start-justified layout>
+                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
+                    </span>
+                  </div>
+                  <div class="cardComment">
+                     <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
+                        <input id="input1" is="core-input" pattern="^[0-9].*">
+                    </paper-input-decorator>
+                  </div>
+                  <div class="cardFooter">
+                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
+                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
+                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
+                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
+                  </div>
+                </div>
+              <!-- *************************** ## End of cards ## ******************** -->   
+            <!-- ***************************Each card for task display******************** -->
+               <div class="todoTask">   
+                  <div class="cardHead"> 
+                      <span class="toggleComplete">
+                        <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+                      </span>
+                      <span class="taskTitle"><strong>Fix car</strong></span>
+                      <span class="arrowDown">
+                        <paper-menu-button>
+                          <paper-icon-button icon="more-vert">
+                          </paper-icon-button>
+                          <paper-dropdown class="dropdown" halign="right">
+                            <core-menu class="menu">
+                              <paper-item>Settings</paper-item>
+                              <paper-item>Help</paper-item>
+                              <paper-item>Feedback</paper-item>
+                            </core-menu>
+                          </paper-dropdown>
+                        </paper-menu-button>
+                        </span>
+                    </div>
+                  
+                  <div class="progress">
+                    <paper-progress value="60" secondaryProgesss="30"></paper-progress>
+                  </div>
+
+                  <div class="cardBody">
+                    <span class="taskDetails" horizontal start-justified layout>
+                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
+                    </span>
+                  </div>
+                  <div class="cardComment">
+                     <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
+                        <input id="input1" is="core-input" pattern="^[0-9].*">
+                    </paper-input-decorator>
+                  </div>
+                  <div class="cardFooter">
+                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
+                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
+                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
+                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
+                  </div>
+                </div>
+              <!-- *************************** ## End of cards ## ******************** -->   
+            <!-- ***************************Each card for task display******************** -->
+               <div class="todoTask">   
+                  <div class="cardHead"> 
+                      <span class="toggleComplete">
+                        <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+                      </span>
+                      <span class="taskTitle"><strong>Fix car</strong></span>
+                      <span class="arrowDown">
+                        <paper-menu-button>
+                          <paper-icon-button icon="more-vert">
+                          </paper-icon-button>
+                          <paper-dropdown class="dropdown" halign="right">
+                            <core-menu class="menu">
+                              <paper-item>Settings</paper-item>
+                              <paper-item>Help</paper-item>
+                              <paper-item>Feedback</paper-item>
+                            </core-menu>
+                          </paper-dropdown>
+                        </paper-menu-button>
+                        </span>
+                    </div>
+                  
+                  <div class="progress">
+                    <paper-progress value="60" secondaryProgesss="30"></paper-progress>
+                  </div>
+
+                  <div class="cardBody">
+                    <span class="taskDetails" horizontal start-justified layout>
+                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
+                    </span>
+                  </div>
+                  <div class="cardComment">
+                     <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
+                        <input id="input1" is="core-input" pattern="^[0-9].*">
+                    </paper-input-decorator>
+                  </div>
+                  <div class="cardFooter">
+                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
+                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
+                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
+                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
+                  </div>
+                </div>
+              <!-- *************************** ## End of cards ## ******************** -->   
+            <!-- ***************************Each card for task display******************** -->
+               <div class="todoTask">   
+                  <div class="cardHead"> 
+                      <span class="toggleComplete">
+                        <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+                      </span>
+                      <span class="taskTitle"><strong>Fix car</strong></span>
+                      <span class="arrowDown">
+                        <paper-menu-button>
+                          <paper-icon-button icon="more-vert">
+                          </paper-icon-button>
+                          <paper-dropdown class="dropdown" halign="right">
+                            <core-menu class="menu">
+                              <paper-item>Settings</paper-item>
+                              <paper-item>Help</paper-item>
+                              <paper-item>Feedback</paper-item>
+                            </core-menu>
+                          </paper-dropdown>
+                        </paper-menu-button>
+                        </span>
+                    </div>
+                  
+                  <div class="progress">
+                    <paper-progress value="60" secondaryProgesss="30"></paper-progress>
+                  </div>
+
+                  <div class="cardBody">
+                    <span class="taskDetails" horizontal start-justified layout>
+                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
+                    </span>
+                  </div>
+                  <div class="cardComment">
+                     <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
+                        <input id="input1" is="core-input" pattern="^[0-9].*">
+                    </paper-input-decorator>
+                  </div>
+                  <div class="cardFooter">
+                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
+                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
+                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
+                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
+                  </div>
+                </div>
+              <!-- *************************** ## End of cards ## ******************** -->   
+            <!-- ***************************Each card for task display******************** -->
+               <div class="todoTask">   
+                  <div class="cardHead"> 
+                      <span class="toggleComplete">
+                        <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+                      </span>
+                      <span class="taskTitle"><strong>Fix car</strong></span>
+                      <span class="arrowDown">
+                        <paper-menu-button>
+                          <paper-icon-button icon="more-vert">
+                          </paper-icon-button>
+                          <paper-dropdown class="dropdown" halign="right">
+                            <core-menu class="menu">
+                              <paper-item>Settings</paper-item>
+                              <paper-item>Help</paper-item>
+                              <paper-item>Feedback</paper-item>
+                            </core-menu>
+                          </paper-dropdown>
+                        </paper-menu-button>
+                        </span>
+                    </div>
+                  
+                  <div class="progress">
+                    <paper-progress value="60" secondaryProgesss="30"></paper-progress>
+                  </div>
+
+                  <div class="cardBody">
+                    <span class="taskDetails" horizontal start-justified layout>
+                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
+                    </span>
+                  </div>
+                  <div class="cardComment">
+                     <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
+                        <input id="input1" is="core-input" pattern="^[0-9].*">
+                    </paper-input-decorator>
+                  </div>
+                  <div class="cardFooter">
+                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
+                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
+                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
+                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
+                  </div>
+                </div>
+              <!-- *************************** ## End of cards ## ******************** -->   
+            <!-- ***************************Each card for task display******************** -->
+               <div class="todoTask">   
+                  <div class="cardHead"> 
+                      <span class="toggleComplete">
+                        <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+                      </span>
+                      <span class="taskTitle"><strong>Fix car</strong></span>
+                      <span class="arrowDown">
+                        <paper-menu-button>
+                          <paper-icon-button icon="more-vert">
+                          </paper-icon-button>
+                          <paper-dropdown class="dropdown" halign="right">
+                            <core-menu class="menu">
+                              <paper-item>Settings</paper-item>
+                              <paper-item>Help</paper-item>
+                              <paper-item>Feedback</paper-item>
+                            </core-menu>
+                          </paper-dropdown>
+                        </paper-menu-button>
+                        </span>
+                    </div>
+                  
+                  <div class="progress">
+                    <paper-progress value="60" secondaryProgesss="30"></paper-progress>
+                  </div>
+
+                  <div class="cardBody">
+                    <span class="taskDetails" horizontal start-justified layout>
+                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
+                    </span>
+                  </div>
+                  <div class="cardComment">
+                     <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
+                        <input id="input1" is="core-input" pattern="^[0-9].*">
+                    </paper-input-decorator>
+                  </div>
+                  <div class="cardFooter">
+                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
+                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
+                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
+                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
+                  </div>
+                </div>
+              <!-- *************************** ## End of cards ## ******************** -->   
+            <!-- ***************************Each card for task display******************** -->
+               <div class="todoTask">   
+                  <div class="cardHead"> 
+                      <span class="toggleComplete">
+                        <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+                      </span>
+                      <span class="taskTitle"><strong>Fix car</strong></span>
+                      <span class="arrowDown">
+                        <paper-menu-button>
+                          <paper-icon-button icon="more-vert">
+                          </paper-icon-button>
+                          <paper-dropdown class="dropdown" halign="right">
+                            <core-menu class="menu">
+                              <paper-item>Settings</paper-item>
+                              <paper-item>Help</paper-item>
+                              <paper-item>Feedback</paper-item>
+                            </core-menu>
+                          </paper-dropdown>
+                        </paper-menu-button>
+                        </span>
+                    </div>
+                  
+                  <div class="progress">
+                    <paper-progress value="60" secondaryProgesss="30"></paper-progress>
+                  </div>
+
+                  <div class="cardBody">
+                    <span class="taskDetails" horizontal start-justified layout>
+                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
+                    </span>
+                  </div>
+                  <div class="cardComment">
+                     <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
+                        <input id="input1" is="core-input" pattern="^[0-9].*">
+                    </paper-input-decorator>
+                  </div>
+                  <div class="cardFooter">
+                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
+                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
+                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
+                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
+                  </div>
+                </div>
+              <!-- *************************** ## End of cards ## ******************** -->   
+            <!-- ***************************Each card for task display******************** -->
+               <div class="todoTask">   
+                  <div class="cardHead"> 
+                      <span class="toggleComplete">
+                        <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
+                      </span>
+                      <span class="taskTitle"><strong>Fix car</strong></span>
+                      <span class="arrowDown">
+                        <paper-menu-button>
+                          <paper-icon-button icon="more-vert">
+                          </paper-icon-button>
+                          <paper-dropdown class="dropdown" halign="right">
+                            <core-menu class="menu">
+                              <paper-item>Settings</paper-item>
+                              <paper-item>Help</paper-item>
+                              <paper-item>Feedback</paper-item>
+                            </core-menu>
+                          </paper-dropdown>
+                        </paper-menu-button>
+                        </span>
+                    </div>
+                  
+                  <div class="progress">
+                    <paper-progress value="60" secondaryProgesss="30"></paper-progress>
+                  </div>
+
                   <div class="cardBody">
                     <span class="taskDetails" horizontal start-justified layout>
                         Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
