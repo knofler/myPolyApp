@@ -35,7 +35,7 @@
        /*border-radius: 9px/40px;*/
        margin-bottom: 13px;
        margin-top:13px;
-       max-height: 350px;
+       max-height: 450px;
        /*width: 50%*/
       }
       #core_drawer_panel {
@@ -168,6 +168,11 @@
       .reply:hover{
         color:lightblue;
       }
+      .arrowDown{
+        float: right;
+        margin-top:-21px; 
+      }
+
      </style>
     <core-drawer-panel transition id="core_drawer_panel" touch-action>
       <section id="section" drawer>
@@ -209,6 +214,7 @@
               </paper-menu-button>
         
              <div id="div1" class="bottom indent">
+             <form
                   <input id="input" placeholder="Write task ..." is="core-input">
              </div>
 
@@ -223,11 +229,29 @@
                       <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
                     </span>
                     <span class="taskTitle"><strong>Fix car</strong></span>
+                    <span class="arrowDown">
+                      <paper-menu-button>
+                        <paper-icon-button icon="more-vert">
+                        </paper-icon-button>
+                        <paper-dropdown class="dropdown" halign="right">
+                          <core-menu class="menu">
+                            <paper-item>Settings</paper-item>
+                            <paper-item>Help</paper-item>
+                            <paper-item>Feedback</paper-item>
+                          </core-menu>
+                        </paper-dropdown>
+                      </paper-menu-button>
+                      </span>
                   </div>
                   <div class="cardBody">
-                    <span class="taskDetails"  horizontal start-justified layout>
+                    <span class="taskDetails" horizontal start-justified layout>
                         Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
                     </span>
+                  </div>
+                  <div class="cardComment">
+                     <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
+                        <input id="input1" is="core-input" pattern="^[0-9].*">
+                    </paper-input-decorator>
                   </div>
                   <div class="cardFooter">
                    <core-icon-button class="room iconbar" icon="room"></core-icon-button>
@@ -237,168 +261,6 @@
                   </div>
                 </div>
               <!-- *************************** ## End of cards ## ******************** -->   
-
-               <!-- ***************************Each card for task display******************** -->
-               <div class="todoTask">   
-                 <div class="cardHead"> 
-                    <span class="toggleComplete">
-                      <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-                    </span>
-                    <span class="taskTitle"><strong>Fix car</strong></span>
-                  </div>
-                  <div class="cardBody">
-                    <span class="taskDetails"  horizontal start-justified layout>
-                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
-                    </span>
-                  </div>
-                  <div class="cardFooter">
-                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
-                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
-                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
-                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
-                  </div>
-                </div>
-              <!-- *************************** ## End of cards ## ******************** -->             <!-- ***************************Each card for task display******************** -->
-               <div class="todoTask">   
-                 <div class="cardHead"> 
-                    <span class="toggleComplete">
-                      <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-                    </span>
-                    <span class="taskTitle"><strong>Fix car</strong></span>
-                  </div>
-                  <div class="cardBody">
-                    <span class="taskDetails"  horizontal start-justified layout>
-                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
-                    </span>
-                  </div>
-                  <div class="cardFooter">
-                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
-                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
-                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
-                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
-                  </div>
-                </div>
-              <!-- *************************** ## End of cards ## ******************** -->             <!-- ***************************Each card for task display******************** -->
-               <div class="todoTask">   
-                 <div class="cardHead"> 
-                    <span class="toggleComplete">
-                      <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-                    </span>
-                    <span class="taskTitle"><strong>Fix car</strong></span>
-                  </div>
-                  <div class="cardBody">
-                    <span class="taskDetails"  horizontal start-justified layout>
-                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
-                    </span>
-                  </div>
-                  <div class="cardFooter">
-                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
-                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
-                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
-                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
-                  </div>
-                </div>
-              <!-- *************************** ## End of cards ## ******************** -->             <!-- ***************************Each card for task display******************** -->
-               <div class="todoTask">   
-                 <div class="cardHead"> 
-                    <span class="toggleComplete">
-                      <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-                    </span>
-                    <span class="taskTitle"><strong>Fix car</strong></span>
-                  </div>
-                  <div class="cardBody">
-                    <span class="taskDetails"  horizontal start-justified layout>
-                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
-                    </span>
-                  </div>
-                  <div class="cardFooter">
-                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
-                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
-                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
-                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
-                  </div>
-                </div>
-              <!-- *************************** ## End of cards ## ******************** -->             <!-- ***************************Each card for task display******************** -->
-               <div class="todoTask">   
-                 <div class="cardHead"> 
-                    <span class="toggleComplete">
-                      <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-                    </span>
-                    <span class="taskTitle"><strong>Fix car</strong></span>
-                  </div>
-                  <div class="cardBody">
-                    <span class="taskDetails"  horizontal start-justified layout>
-                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
-                    </span>
-                  </div>
-                  <div class="cardFooter">
-                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
-                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
-                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
-                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
-                  </div>
-                </div>
-              <!-- *************************** ## End of cards ## ******************** -->             <!-- ***************************Each card for task display******************** -->
-               <div class="todoTask">   
-                 <div class="cardHead"> 
-                    <span class="toggleComplete">
-                      <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-                    </span>
-                    <span class="taskTitle"><strong>Fix car</strong></span>
-                  </div>
-                  <div class="cardBody">
-                    <span class="taskDetails"  horizontal start-justified layout>
-                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
-                    </span>
-                  </div>
-                  <div class="cardFooter">
-                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
-                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
-                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
-                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
-                  </div>
-                </div>
-              <!-- *************************** ## End of cards ## ******************** -->             <!-- ***************************Each card for task display******************** -->
-               <div class="todoTask">   
-                 <div class="cardHead"> 
-                    <span class="toggleComplete">
-                      <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-                    </span>
-                    <span class="taskTitle"><strong>Fix car</strong></span>
-                  </div>
-                  <div class="cardBody">
-                    <span class="taskDetails"  horizontal start-justified layout>
-                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
-                    </span>
-                  </div>
-                  <div class="cardFooter">
-                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
-                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
-                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
-                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
-                  </div>
-                </div>
-              <!-- *************************** ## End of cards ## ******************** -->             <!-- ***************************Each card for task display******************** -->
-               <div class="todoTask">   
-                 <div class="cardHead"> 
-                    <span class="toggleComplete">
-                      <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
-                    </span>
-                    <span class="taskTitle"><strong>Fix car</strong></span>
-                  </div>
-                  <div class="cardBody">
-                    <span class="taskDetails"  horizontal start-justified layout>
-                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
-                    </span>
-                  </div>
-                  <div class="cardFooter">
-                   <core-icon-button class="room iconbar" icon="room"></core-icon-button>
-                   <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
-                   <core-icon-button class="star iconbar" icon="star"></core-icon-button>
-                   <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
-                  </div>
-                </div>
-              <!-- *************************** ## End of cards ## ******************** -->                       
            
            </div>
         </core-header-panel>
