@@ -54,16 +54,17 @@
             <!-- database Connection using firebase and core-ajax componenet -->
             <core-ajax
                   auto
-                  loading=true
                   url="https://metest.firebaseio.com/views.json"
+                  params='{"rows":"3"}'
+                  handleAs="json"
                   response="{{views}}">
              </core-ajax>
 
 
            <div class="bottom indent todo">   
 
-             <!-- ***************************Each card for task display******************** -->
-              
+            <template repeat="{{view in views}}">
+             <!-- ***************************Each card for task display******************** -->              
               <div class="todoTask">   
                   <div class="cardHead"> 
                       <span class="toggleComplete">
@@ -94,11 +95,6 @@
                     <span class="taskDetails" horizontal start-justified layout>
                         Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
                     </span>
-                    <ul>
-                    <template repeat="{{view in views}}">
-                      <li>{{view.fname}} {{view.lname}}</li>
-                      </template>
-                    </ul>
                   </div>
                   <div class="cardComment">
                      <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
@@ -113,9 +109,10 @@
                   </div>
                 </div>
               <!-- *************************** ## End of cards ## ******************** -->   
-        
-           
+              </template>
+
            </div>
+
         </core-header-panel>
       </section>
    </template>
