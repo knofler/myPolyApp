@@ -32,6 +32,25 @@
     nextSelector: 'a.jscroll-next:last',
     contentSelector: 'li'
 }); -->
+  
+  <!-- **********************************DATABASE Connection elements via ajax call*********************************************  -->
+
+        <!-- database Connection using core-ajax componenet -->
+        <!--     <core-ajax
+                  auto
+                  url="https://metest.firebaseio.com/views.json"
+                  params='{"rows":"3"}'
+                  handleAs="json"
+                  response="{{views}}">
+             </core-ajax> -->
+
+             <!-- Include firebase element -->
+             <firebase-element
+              id="ref"
+              location="https://metest.firebaseio.com/views"
+              data="{{views}}"
+              keys="{{keys}}">
+              </firebase-element>
       
       <core-header-panel condenses flex mode="waterfall-tall" id="core_header_panel">
          
@@ -53,27 +72,11 @@
               </paper-menu-button>
         
              <div id="div1" class="bottom indent">
-                  <input id="input" placeholder="Write task ..." is="core-input">
+             <form horizontal layout on-submit="{{addTask}}">
+                  <input id="input" value="{{goalName}}" placeholder="Write task ..." is="core-input">
              </div>
 
            </core-toolbar>
-
-            <!-- database Connection using firebase and core-ajax componenet -->
-        <!--     <core-ajax
-                  auto
-                  url="https://metest.firebaseio.com/views.json"
-                  params='{"rows":"3"}'
-                  handleAs="json"
-                  response="{{views}}">
-             </core-ajax> -->
-
-             <!-- Include firebase element -->
-             <firebase-element
-              location="https://metest.firebaseio.com/views"
-              limitToFirst="10"
-              data="{{views}}"
-              keys="{{keys}}">
-              </firebase-element>
 
 
            <div class="bottom indent todo">   
@@ -133,8 +136,14 @@
    </template>
   <script>
     Polymer('my-element',{
+      goalName : '',
       showDrawer: function(){
           alert("hello");
+      },
+      addTask: function(e){
+          e.preventDefault();
+          this.$.ref.push({goalName:this.goalName});
+          this.goalName = '';
       }
     });
    </script>
