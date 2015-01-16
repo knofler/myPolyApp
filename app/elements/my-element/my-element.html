@@ -25,6 +25,13 @@
         </core-menu>
       </section>
       <section id="section" main>
+
+    <!--   $('.infinite-scroll').jscroll({
+    loadingHtml: '<img src="loading.gif" alt="Loading" /> Loading...',
+    padding: 20,
+    nextSelector: 'a.jscroll-next:last',
+    contentSelector: 'li'
+}); -->
       
       <core-header-panel condenses flex mode="waterfall-tall" id="core_header_panel">
          
@@ -52,25 +59,33 @@
            </core-toolbar>
 
             <!-- database Connection using firebase and core-ajax componenet -->
-            <core-ajax
+        <!--     <core-ajax
                   auto
                   url="https://metest.firebaseio.com/views.json"
                   params='{"rows":"3"}'
                   handleAs="json"
                   response="{{views}}">
-             </core-ajax>
+             </core-ajax> -->
+
+             <!-- Include firebase element -->
+             <firebase-element
+              location="https://metest.firebaseio.com/views"
+              limitToFirst="10"
+              data="{{views}}"
+              keys="{{keys}}">
+              </firebase-element>
 
 
            <div class="bottom indent todo">   
 
-            <template repeat="{{view in views}}">
+            <template repeat="{{key in keys}}">
              <!-- ***************************Each card for task display******************** -->              
               <div class="todoTask">   
                   <div class="cardHead"> 
                       <span class="toggleComplete">
                         <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
                       </span>
-                      <span class="taskTitle"><strong>Fix car</strong></span>
+                      <span class="taskTitle"><strong>{{views[key].goalName}}</strong></span>
                       <span class="arrowDown">
                         <paper-menu-button>
                           <paper-icon-button icon="more-vert">
@@ -88,12 +103,12 @@
                    
                   
                   <div class="progress">
-                    <paper-progress value="60" secondaryProgesss="30"></paper-progress>
+                    <paper-progress value="{{views[key].progress}}" secondaryProgesss="30"></paper-progress>
                   </div>
 
                   <div class="cardBody">
                     <span class="taskDetails" horizontal start-justified layout>
-                        Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too do,Number One things too doNumber One things too do
+                       {{views[key].goalDesc}}
                     </span>
                   </div>
                   <div class="cardComment">
