@@ -94,11 +94,19 @@
         top: 2px;
         position: absolute;
       }
-      #input {
-        padding: 15px;
-        left: 46px;
-        top: 15px;
+      .inputGoal {
+        left: 59px;
         position: absolute;
+        top: -19px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #444;
+      }
+      .inputGoalDesc {
+        left: 59px;
+        padding-top: 5px;
+        position: absolute;
+        top: 14px;
+        /*border: 1px solid red;*/
       }
       #core_icon_button4 {
         left: 1110px;
@@ -188,4 +196,12 @@
       }*/
       paper-progress::shadow #progressContainer {
         background-color:#c8c8c8;
+      }
+
+      .cardDesc{
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      core-toolbar{
+        height:112px;
       }

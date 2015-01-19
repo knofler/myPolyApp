@@ -72,9 +72,15 @@
                 </paper-dropdown>
               </paper-menu-button>
         
-             <div id="div1" class="bottom indent">
-             <form horizontal layout on-submit="{{addTask}}">
-                  <input id="input" value="{{goalName}}" placeholder="Write task ..." is="core-input">
+             <div class="bottom indent">
+             <form horizontal layout on-submit="{{addGoal}}">
+                  <div class="inputGoal">
+                  <input value="{{goalName}}" placeholder="What is your goal ?" is="core-input">
+                  </div>
+                  <!-- <div class="inputGoalDesc">
+                  <input value="{{goalDesc}}" placeholder="what is it all about" is="core-input">
+                  </div> -->
+              </form>
              </div>
 
            </core-toolbar>
@@ -124,7 +130,9 @@
                   </div>
                   <div class="cardComment">
                      <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
-                        <input id="input1" is="core-input" pattern="^[0-9].*">
+                        <!--  <form horizontal layout on-submit="{{addTask}}">
+                          <input id="input1" value="{{taskName}}" is="core-input">
+                      </form> -->
                     </paper-input-decorator>
                   </div>
                   <div class="cardFooter">
@@ -145,13 +153,15 @@
   <script>
     Polymer('my-element',{
       goalName : '',
+      goalDesc: '',
       showDrawer: function(){
           alert("hello");
       },
-      addTask: function(e){
+      addGoal: function(e){
           e.preventDefault();
-          this.$.ref.push({goalName:this.goalName});
+          this.$.ref.push({goalName:this.goalName,goalDesc:this.goalDesc,date:new Date(),favorite:"No",progress:"25"});
           this.goalName = '';
+          this.goalDesc = '';
       }
     });
    </script>
