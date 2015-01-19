@@ -20,5 +20,15 @@
         "contact": "0412649744",
 	"favorite":"yes",
 	"date":"1310669017"
+    },    {
+        "goalName": "Learn Python",
+        "goalDesc": "I think I should try some github demos and the quick mvc framework models as well as my own little ideas to prototype.",
+        "progress": "25",
+        "status": "open",
+        "taskItem": "register to github",
+        "location": "sydney",
+        "contact": "0412649744",
+	"favorite":"yes",
+	"date":"1310669017"
     }
 ]

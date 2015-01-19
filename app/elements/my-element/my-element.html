@@ -38,17 +38,17 @@
         <!-- database Connection using core-ajax componenet -->
         <!--     <core-ajax
                   auto
-                  url="https://metest.firebaseio.com/views.json"
+                  url="https://metest.firebaseio.com/goals.json"
                   params='{"rows":"3"}'
                   handleAs="json"
-                  response="{{views}}">
+                  response="{{goals}}">
              </core-ajax> -->
 
              <!-- Include firebase element -->
              <firebase-element
               id="ref"
-              location="https://metest.firebaseio.com/views"
-              data="{{views}}"
+              location="https://metest.firebaseio.com/goals"
+              data="{{goals}}"
               keys="{{keys}}">
               </firebase-element>
       
@@ -89,7 +89,7 @@
                       <span class="toggleComplete">
                         <paper-toggle-button id="paper_toggle_button"></paper-toggle-button>
                       </span>
-                      <span class="taskTitle"><strong>{{views[key].goalName}}</strong></span>
+                      <span class="taskTitle"><strong>{{goals[key].goalName}}</strong></span>
                       <span class="arrowDown">
                         <paper-menu-button>
                           <paper-icon-button icon="more-vert">
@@ -107,13 +107,20 @@
                    
                   
                   <div class="progress">
-                    <paper-progress value="{{views[key].progress}}" secondaryProgesss="30"></paper-progress>
+                    <paper-progress value="{{goals[key].progress}}" secondaryProgesss="30"></paper-progress>
                   </div>
 
                   <div class="cardBody">
                     <span class="taskDetails" horizontal start-justified layout>
-                       {{views[key].goalDesc}}
+                       {{goals[key].goalDesc}}
                     </span>
+                  </div>
+                 <div class="taskList">
+                 <ul>
+                 <template repeat="{{task in goals[key].tasks}}">
+                    <li>{{task.taskItem}}</li>
+                    </template>
+                  </ul>
                   </div>
                   <div class="cardComment">
                      <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
