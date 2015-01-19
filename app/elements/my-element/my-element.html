@@ -6,7 +6,15 @@
 
   <!-- link css here   -->
   <link rel="stylesheet" href="my-element.css">
-
+ <paper-action-dialog id="taskDialog" heading="Task Details" >
+                          <form>
+                            <paper-input id="desc" label="task Description"></paper-input>
+                              <paper-autogrow-textarea id="contentArea">
+                                <textarea id="content" placeholder="type tasks here"></textarea>
+                              </paper-autogrow-textarea>
+                          </form>
+                        <paper-button affirmative autofocus on-click="{{addTask}}">Add Task</paper-button>
+                        </paper-action-dialog>
 
     <core-drawer-panel transition id="core_drawer_panel" touch-action>
       <section id="section" drawer>
@@ -16,7 +24,7 @@
             <core-item id="core_item1" label="This week" horizontal center layout></core-item>
             <core-item id="core_item2" label="Last week" horizontal center layout></core-item>
           </core-submenu>
-
+          
           <core-submenu active id="core_submenu1" icon="settings" label="iDid">
             <core-item id="core_item3" label="This year" horizontal center layout></core-item>
             <core-item id="core_item4" label="Last year" horizontal center layout></core-item>
@@ -36,19 +44,18 @@
   <!-- **********************************DATABASE Connection elements via ajax call*********************************************  -->
 
         <!-- database Connection using core-ajax componenet -->
-        <!--     <core-ajax
-                  auto
-                  url="https://metest.firebaseio.com/goals.json"
-                  params='{"rows":"3"}'
-                  handleAs="json"
-                  response="{{goals}}">
-             </core-ajax> -->
 
              <!-- Include firebase element -->
              <firebase-element
               id="ref"
               location="https://metest.firebaseio.com/goals"
               data="{{goals}}"
+              keys="{{keys}}">
+              </firebase-element>
+              <firebase-element
+              id="task"
+              location="https://metest.firebaseio.com/goals/tasks/"
+              data="{{tasks}}"
               keys="{{keys}}">
               </firebase-element>
       
@@ -115,7 +122,9 @@
                   <div class="progress">
                     <paper-progress value="{{goals[key].progress}}" secondaryProgesss="30"></paper-progress>
                   </div>
-
+                      <button on-click="{{opendialog}}">ShowDialog
+                       
+                      </button>
                   <div class="cardBody">
                     <span class="taskDetails" horizontal start-justified layout>
                        {{goals[key].goalDesc}}
@@ -130,9 +139,11 @@
                   </div>
                   <div class="cardComment">
                      <paper-input-decorator auto-complete floatingLabel label="Your goals" id="paper1" error="Value must start with a number!">
-                         <form horizontal layout on-submit="{{addTask}}">
-                          <input id="input1" value="{{taskName}}" is="core-input">
+                      <form horizontal layout on-submit="{{addTask}}">
+                          <input id="input" value="{{taskItem}}" is="core-input">
                       </form>
+                         
+              </form>
                     </paper-input-decorator>
                   </div>
                   <div class="cardFooter">
@@ -154,6 +165,7 @@
     Polymer('my-element',{
       goalName : '',
       goalDesc: '',
+      taskItem: '',
       showDrawer: function(){
           alert("hello");
       },
@@ -162,6 +174,15 @@
           this.$.ref.push({goalName:this.goalName,goalDesc:this.goalDesc,date:new Date(),favorite:"No",progress:"25"});
           this.goalName = '';
           this.goalDesc = '';
+      },
+      addTask: function(e){
+        e.preventDefault();
+        this.$.task.push({taskItem:this.taskItem});
+        this.taskItem = '';
+      },
+      opendialog: function(){
+        console.log(this.$);
+        this.$.taskDialog.toggle();
       }
     });
    </script>

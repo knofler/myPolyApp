@@ -205,3 +205,6 @@
       core-toolbar{
         /*height:112px;*/
       }
+      #taskDialog{
+        /*display: none;*/
+      }
