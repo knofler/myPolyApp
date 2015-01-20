@@ -75,14 +75,32 @@
                    </paper-dropdown>
                </paper-menu-button>
               <div class="bottom indent">
-               <form horizontal layout on-submit="{{addGoal}}">
-                  <div class="inputGoal">
-                  <input value="{{goalName}}" placeholder="What is your goal ?" is="core-input">
-                 </div>
-                 </form>
+                What is you goal?
                </div>
              </core-toolbar>
-            <div class="bottom indent todo">   
+            <div class="bottom indent todo">
+
+            <!-- *************************add task top card*************************** -->
+              <div class = "todoTask" >   
+                <div class="cardHead"> 
+                    
+                 </div>    
+                <div class = "cardBody" >
+                  <form horizontal layout on-submit="{{addGoal}}">
+                    <div class="inputGoal">
+                      <input value="{{goalName}}" placeholder="What is your goal ?" is="core-input">
+                     </div>
+                   </form>
+                  </div>      
+                <div class = "cardFooter" >
+                     <core-icon-button class="room iconbar" icon="room"></core-icon-button>
+                     <core-icon-button class="phone iconbar" icon="perm-phone-msg"></core-icon-button>
+                     <core-icon-button class="star iconbar" icon="star"></core-icon-button>
+                     <core-icon-button class="reply iconbar" icon="reply"></core-icon-button>
+                 </div>   
+             </div>
+            <!-- ************************* end of add task top card *************************** -->
+
               <!-- ***************************Each card for task display******************** -->       
               <template repeat="{{key in keys}}">        
                 <div class = "todoTask" >   
@@ -109,24 +127,6 @@
                   <paper-progress value="{{goals[key].progress}}" secondaryProgesss="30"></paper-progress>
                  </div>
                 <button on-click="{{opendialog}}">ShowDialog
-                  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@********************###########@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-                  <!-- ##############################     Moal Dialog    ######################################## -->
-                  <paper-action-dialog id="taskDialog" heading="Task Details" >
-                      <form>
-                      <div>
-                        <paper-input id="task" label="task Description">
-                        </paper-input>
-                      </div>
-                      <div>   
-                          <paper-autogrow-textarea id="contentArea">
-                            <textarea id="content" placeholder="type tasks here"></textarea>
-                          </paper-autogrow-textarea>
-                      </div>
-                      </form>
-                      <paper-button affirmative autofocus on-click="{{addTask}}">Add Task</paper-button>
-                      </paper-action-dialog>
-                  <!-- ##############################******************************************################## -->
-                  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
                 </button>
                 <div class = "cardBody" >
                   <span class="taskDetails" horizontal start-justified layout>
