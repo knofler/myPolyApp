@@ -28,11 +28,11 @@
         </paper-action-dialog>
     <!-- ##############################******************************************################## -->
     <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-    
+
 
     <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@********************************************@@@@@@@@@@@@@@@@@@@ -->
     <!-- ########################### DATABASE Connection elements via ajax call ################### -->
-      <firebase-element
+    <firebase-element
           id="ref"
           location="https://metest.firebaseio.com/goals"
           data="{{goals}}"
@@ -44,7 +44,7 @@
 
     <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@***************************************@@@@@@@@@@@@@@@@@@@@@@@@ -->
     <!-- ########################### SCAFFOLDING BY CUSTOM POLYMER ELEMENT ######################## -->  
-      <core-drawer-panel transition id="core_drawer_panel" touch-action>
+    <core-drawer-panel transition id="core_drawer_panel" touch-action>
         <section id ="section" drawer>
           <core-menu selected="1" selectedindex="1" id="core_menu"> 
             <core-submenu id="core_submenu" icon="settings" label="Todos">
@@ -108,7 +108,26 @@
                 <div class = "progress" >
                   <paper-progress value="{{goals[key].progress}}" secondaryProgesss="30"></paper-progress>
                  </div>
-                <button on-click="{{opendialog}}">ShowDialog</button>
+                <button on-click="{{opendialogIn}}">ShowDialog
+                  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@********************###########@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+                  <!-- ##############################     Moal Dialog    ######################################## -->
+                  <paper-action-dialog id="taskDialog" heading="Task Details" >
+                      <form>
+                      <div>
+                        <paper-input id="task" label="task Description">
+                        </paper-input>
+                      </div>
+                      <div>   
+                          <paper-autogrow-textarea id="contentArea">
+                            <textarea id="content" placeholder="type tasks here"></textarea>
+                          </paper-autogrow-textarea>
+                      </div>
+                      </form>
+                      <paper-button affirmative autofocus on-click="{{addTask}}">Add Task</paper-button>
+                      </paper-action-dialog>
+                  <!-- ##############################******************************************################## -->
+                  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+                </button>
                 <div class = "cardBody" >
                   <span class="taskDetails" horizontal start-justified layout>
                     {{goals[key].goalDesc}}
@@ -140,17 +159,25 @@
    </template>
   <script>
     Polymer('my-element',{
+      tryMe : 'hello',
       goalName : '',
       goalDesc: '',
       showDrawer: function(){
-          alert("hello");
-      },
+        alert("hello");
+       },
       addGoal: function(e){
-          e.preventDefault();
-          this.$.ref.push({goalName:this.goalName,goalDesc:this.goalDesc,date:new Date(),favorite:"No",progress:"25"});
-          this.goalName = '';
-          this.goalDesc = '';
-      },
+        e.preventDefault();
+        this.$.ref.push({
+          goalName:this.goalName,
+          goalDesc:this.goalDesc,
+          timestamp:new Date().getTime(),
+          location: "", 
+          favorite:"No",
+          progress:"25"
+        });
+        this.goalName = '';
+        this.goalDesc = '';
+       },
       addTask: function(e){
         e.preventDefault();
         if(this.$.task.value == ''){
@@ -164,13 +191,23 @@
 
         console.log("title: " , this.$.task.value);
         console.log("textArea: " , this.$.content.value);
-        this.$.ref.push({taskItem:this.$.task.value});
+        this.$.ref.push({
+          tasks:{taskItem:this.$.task.value}
+        });
         this.$.task.value = '';
         this.$.content.value = ''
-      },
+        },
       opendialog: function(){
-        this.$.taskDialog.toggle();
-      }
+       this.$.taskDialog.toggle();
+       },
+      opendialogIn: function(e){
+        // var data = this.$.ref.goals;
+        var key = e.target.templateInstance.model.key;
+        console.log('data', data);
+        console.log("key : " , key);
+        console.log("target is : " ,data[key]);
+        // this.$.ref.toggle();
+       }
     });
    </script>
  </polymer-element>
