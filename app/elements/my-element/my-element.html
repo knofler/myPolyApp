@@ -108,7 +108,7 @@
                 <div class = "progress" >
                   <paper-progress value="{{goals[key].progress}}" secondaryProgesss="30"></paper-progress>
                  </div>
-                <button on-click="{{opendialogIn}}">ShowDialog
+                <button on-click="{{opendialog}}">ShowDialog
                   <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@********************###########@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
                   <!-- ##############################     Moal Dialog    ######################################## -->
                   <paper-action-dialog id="taskDialog" heading="Task Details" >
@@ -201,11 +201,9 @@
        this.$.taskDialog.toggle();
        },
       opendialogIn: function(e){
-        // var data = this.$.ref.goals;
-        var key = e.target.templateInstance.model.key;
-        console.log('data', data);
-        console.log("key : " , key);
-        console.log("target is : " ,data[key]);
+        var key = e.target.templateInstance.model;
+        console.log(key);
+        console.log(this.$.ref.get(key))
         // this.$.ref.toggle();
        }
     });
