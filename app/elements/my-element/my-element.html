@@ -74,7 +74,7 @@
                      </core-menu>
                    </paper-dropdown>
                </paper-menu-button>
-              <div class="bottom indent">
+              <div class="bottom ctrlHead indent">
                 What is you goal?
                </div>
              </core-toolbar>
@@ -86,9 +86,17 @@
                     
                  </div>    
                 <div class = "cardBody" >
-                  <form horizontal layout on-submit="{{addGoal}}">
+                  <form horizontal layout >
                     <div class="inputGoal">
+                    <div>
                       <input value="{{goalName}}" placeholder="What is your goal ?" is="core-input">
+                     </div>
+                     <div>
+                      <input value="{{goalDesc}}" placeholder="write about it .. " is="core-input">
+                     </div>
+                      <div>
+                      <button on-click="{{addGoal}}">Add Goal</button>
+                      </div>
                      </div>
                    </form>
                   </div>      
