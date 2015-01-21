@@ -89,10 +89,14 @@
                   <form horizontal layout >
                     <div class="inputGoal">
                     <div>
-                      <input value="{{goalName}}" placeholder="What is your goal ?" is="core-input">
+                      <paper-input-decorator auto-complete floatingLabel label="What is your goal ?" id="taskNameDeco" error="Value must start with a number!">
+                         <input id="taskName" value="{{goalName}}" is="core-input" pattern="^[0-9].*">
+                         </paper-input-decorator>
                      </div>
-                     <div>
-                      <input value="{{goalDesc}}" placeholder="write about it .. " is="core-input">
+                      <div>
+                      <paper-input-decorator auto-complete floatingLabel label="write about it .." id="taskDescDeco" error="Value must start with a number!">
+                         <input id="taskDesc" value="{{goalDesc}}" is="core-input" pattern="^[0-9].*">
+                         </paper-input-decorator>
                      </div>
                       <div>
                       <button on-click="{{addGoal}}">Add Goal</button>
